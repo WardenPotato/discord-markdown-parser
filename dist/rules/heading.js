@@ -9,7 +9,8 @@ const extend_1 = require("../utils/extend");
 const regex_1 = require("../utils/regex");
 exports.heading = (0, extend_1.extend)({
     match: function (source, state) {
-        if (state.prevCapture === null || state.prevCapture[0] === '\n') {
+        var _a;
+        if (state.prevCapture === null || state.prevCapture[0] === '\n' || state.prevCapture[((_a = state.prevCapture) === null || _a === void 0 ? void 0 : _a.length) - 1] === '\n') {
             return regex_1.HeadingRegex.exec(source);
         }
         return null;
