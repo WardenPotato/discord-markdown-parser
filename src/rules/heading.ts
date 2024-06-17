@@ -5,7 +5,7 @@ import { HeadingRegex } from '../utils/regex';
 export const heading = extend(
   {
     match: function (source, state) {
-      if (state.prevCapture === null || state.prevCapture[0] === '\n') {
+      if (state.prevCapture === null || state.prevCapture[0] === '\n' || state.prevCapture[state.prevCapture?.length - 1] === '\n') {
         return HeadingRegex.exec(source);
       }
       return null;

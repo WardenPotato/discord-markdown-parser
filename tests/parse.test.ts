@@ -432,5 +432,29 @@ describe('Parse', () => {
         ],
       },
     ]);
+    expect(parse('> This is\n# A header')).toEqual([
+      {
+        type: 'blockQuote',
+        content: [
+          {
+            type: 'text',
+            content: 'This is',
+          },
+          {
+            type: 'br',
+          }
+        ],
+      },
+      {
+        type: 'heading',
+        level: 1,
+        content: [
+          {
+            type: 'text',
+            content: 'A header',
+          },
+        ],
+      },
+    ]);
   });
 });
