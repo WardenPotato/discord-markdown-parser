@@ -37,8 +37,5 @@
   },
   "dependencies": {
     "simple-markdown": "^0.7.3"
-  },
-  "files": [
-    "dist"
-  ]
+  }
 }
